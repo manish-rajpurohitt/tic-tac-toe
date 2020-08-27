@@ -1,3 +1,5 @@
+/** @format */
+
 let players = [];
 let gameOver = false;
 let turn = 0;
@@ -81,8 +83,11 @@ const checkWinning = () => {
 };
 
 let gameContainer = document.getElementById("hide");
-
+let hideList = document.getElementsByClassName("hide");
 const initGame = (id) => {
+  for (let p = 0; p < hideList.length; p++) {
+    hideList[p].hidden = "true";
+  }
   let inp1 = document.getElementById("p1");
   let inp2 = document.getElementById("p2");
   let player1 = inp1.value;
@@ -96,7 +101,6 @@ const initGame = (id) => {
   inp2.setAttribute("disabled", true);
   nocells.setAttribute("disabled", true);
 
-  console.log(gameContainer.classList);
   players.push(player1);
   players.push(player2);
   document.getElementById("turn").innerHTML = `${players[0]}'s Turn`;
