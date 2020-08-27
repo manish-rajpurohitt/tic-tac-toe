@@ -83,7 +83,6 @@ const checkWinning = () => {
 let gameContainer = document.getElementById("hide");
 
 const initGame = (id) => {
-  console.log(board);
   let inp1 = document.getElementById("p1");
   let inp2 = document.getElementById("p2");
   let player1 = inp1.value;
@@ -97,7 +96,7 @@ const initGame = (id) => {
   inp2.setAttribute("disabled", true);
   nocells.setAttribute("disabled", true);
 
-  gameContainer.classList.remove("hide");
+  console.log(gameContainer.classList);
   players.push(player1);
   players.push(player2);
   document.getElementById("turn").innerHTML = `${players[0]}'s Turn`;
